@@ -1,4 +1,0 @@
-xhost +local:$host
-#!/bin/sh
-[[ -f ~/.zshrc ]] && source ~/.zshrc
-[[ -f ~/.profile ]] && source ~/.profile

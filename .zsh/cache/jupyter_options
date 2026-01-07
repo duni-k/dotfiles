@@ -1,4 +1,0 @@
-kernelspec=( ${(Q)"${(z)$(<<\EO:kernelspec
-'(--Application.log_datefmt)--Application.log_datefmt=:' '(--Application.log_format)--Application.log_format=:' '(--Application.log_level)--Application.log_level=:' '(--Application.logging_config)--Application.logging_config=:' '(--Application.show_config)--Application.show_config=:' '(--Application.show_config_json)--Application.show_config_json=:' '(--KernelSpecApp.log_datefmt)--KernelSpecApp.log_datefmt=:' '(--KernelSpecApp.log_format)--KernelSpecApp.log_format=:' '(--KernelSpecApp.log_level)--KernelSpecApp.log_level=:' '(--KernelSpecApp.logging_config)--KernelSpecApp.logging_config=:' '(--KernelSpecApp.show_config)--KernelSpecApp.show_config=:' '(--KernelSpecApp.show_config_json)--KernelSpecApp.show_config_json=:'
-EO:kernelspec
-)}"} )
