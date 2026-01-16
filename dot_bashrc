@@ -22,3 +22,5 @@ function config() {
 function install() {
   sudo pacman -Syuu $1
 }
+. "$HOME/.cargo/env"
+eval "$(tv init bash)"
