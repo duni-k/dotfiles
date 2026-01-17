@@ -10,6 +10,8 @@ source ~/.local/share/omarchy/default/bash/rc
 # Make an alias for invoking commands you use constantly
 # alias p='python'
 alias e=nvim
+alias lzd=lazydocker
+alias lg=layzgit
 
 function files() {
   e $(tv files)
@@ -22,5 +24,10 @@ function config() {
 function install() {
   sudo pacman -Syuu $1
 }
+
+function grs() {
+  cd $(tv git-repos)
+}
+
 . "$HOME/.cargo/env"
 eval "$(tv init bash)"
