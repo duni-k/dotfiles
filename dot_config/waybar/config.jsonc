@@ -9,7 +9,8 @@
     "modules-left": [
         "custom/update",
         "group/system",
-        "hyprland/window",
+        "hyprland/language",
+        "hyprland/window"
     ],
     
     "modules-center": [
@@ -50,6 +51,11 @@
             "*": 5
         },
         "on-click": "activate"
+    },
+    "hyprland/language": {
+        "format": "{}",
+        "format-en": "EN",
+        "format-sv": "SV"
     },
     "hyprland/window": {
         "format": "",

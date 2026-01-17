@@ -9,39 +9,49 @@
 }
 
 window#waybar {
-    background: @background;
+    background: transparent;
     color: @foreground;
 }
 
-#window {
-    margin-top: 10px;
-    padding: 0 8px;
-}
-
-#window > * {
-    margin: 0 2px;
-}
-
-#workspaces button {
-  all: unset;
-  border-radius: 15px;
-  padding: 0 6px;
-  margin: 0 1.5px;
-  min-width: 9px;
-}
-
-#workspaces button.empty {
-  opacity: 0.5;
+#system,
+#language,
+#window,
+#clock
+{
+    background: @foreground;
+    color: @background;
 }
 
 #system {
-  background: @foreground;
-  color: @background;
+    padding-top: 4px;
+    border-radius: 2px 0 0 0;
+}
+#language {
+    border-radius: 0;
+}
+
+#window {
+    border-radius: 0 0 0 2px;
+    padding: 0 8px 8px;
+}
+
+#window > * {
+    margin-left: 2px;
+}
+
+#workspaces button {
+    all: unset;
+    border-radius: 15px;
+    padding: 0 6px;
+    margin: 0 1.5px;
+    min-width: 9px;
+}
+
+#workspaces button.empty {
+    opacity: 0.5;
 }
 
 #clock {
-    background: @foreground;
-    color: @background;
     font-size: 14px;
     font-weight: bold;
     margin-top: 10px;
@@ -51,6 +61,7 @@ window#waybar {
 #battery.critical {
     color: alpha(@foreground, 0.7);
 }
+
 
 tooltip {
     border: 2px solid alpha(@foreground, 0.2);
