@@ -1,69 +1,61 @@
 {
-    "reload_on_style_change": true,
+    "reload_style_on_change": true,
     "layer": "top",
     "position": "right",
-    "width": 20,
-    "spacing": 8,
+    "width": 40,
     "margin-top": 10,
     "margin-bottom": 10,
-    "margin-left": 10,
     
     "modules-left": [
-        "custom/omarchy",
         "custom/update",
-        "hyprland/workspaces"
+        "group/system",
+        "hyprland/window",
     ],
     
     "modules-center": [
-        "clock"
+        "hyprland/workspaces"
     ],
     
     "modules-right": [
-        "pulseaudio",
-        "network",
-        "cpu",
-        "memory",
-        "battery",
         "tray",
-        "custom/timer",
+        "battery",
+        "clock"
     ],
-
-    "custom/omarchy": {
-      "format": "\r<span font='omarchy'>\ue900</span>",
-      "on-click": "omarchy-menu",
-      "on-click-right": "xdg-terminal-exec",
-      "tooltip-format": "Omarchy Menu\n\nSuper + Alt + Space"
+    
+    "group/system": {
+        "orientation": "inherit",
+        "modules": [
+            "network",
+            "cpu",
+            "memory",
+            "pulseaudio"
+        ]
     },
-
+    
     "custom/update": {
-      "format": "",
+      "format": "",
       "exec": "omarchy-update-available",
       "on-click": "omarchy-launch-floating-terminal-with-presentation omarchy-update",
       "tooltip-format": "Omarchy update available",
       "signal": 7,
       "interval": 21600
     },
-
     "hyprland/workspaces": {
         "format": "{icon}",
         "format-icons": {
-            "1": "一",
-            "2": "二",
-            "3": "三",
-            "4": "四",
-            "5": "五",
-            "6": "六",
-            "7": "七",
-            "8": "八",
-            "9": "九",
-            "10": "十"
+            "active": "●",
+            "default": "○"
         },
         "persistent-workspaces": {
             "*": 5
         },
         "on-click": "activate"
     },
-
+    "hyprland/window": {
+        "format": "",
+        "icon": true,
+        "icon-size": 20,
+    },
     "clock": {
         "format": "{:%H\n%M}",
         "format-alt": "{:%m\n%d}",
@@ -79,11 +71,9 @@
             }
         }
     },
-
     "tray": {
         "spacing": 10
     },
-
     "pulseaudio": {
         "format": "{icon}",
         "format-muted": "󰝟",
@@ -94,7 +84,6 @@
         "on-click-right": "pamixer -t",
         "tooltip-format": "{volume}%"
     },
-
     "network": {
       "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
       "format": "{icon}",
@@ -108,19 +97,16 @@
       "spacing": 1,
       "on-click": "omarchy-launch-wifi"
     },
-
     "cpu": {
         "format": "󰻠",
         "tooltip-format": "CPU: {usage}%",
         "on-click": "omarchy-launch-or-focus-tui btop",
         "on-click-right": "alacritty"
     },
-
     "memory": {
         "format": "󰍛",
         "tooltip-format": "RAM: {percentage}%"
     },
-
     "battery": {
         "states": {
             "warning": 30,
@@ -131,18 +117,5 @@
         "format-plugged": "󰂄",
         "format-icons": ["󰂃", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
         "tooltip-format": "{capacity}%"
-    },
-
-    "custom/timer": {
-        "exec": "~/.config/waybar/scripts/timer.sh",
-        "return-type": "json",
-        "format": "{}",
-        "on-click": "~/.config/waybar/scripts/timer.sh click",
-        "on-click-right": "~/.config/waybar/scripts/timer.sh right",
-        "on-click-middle": "~/.config/waybar/scripts/timer.sh middle",
-        "on-scroll-up": "~/.config/waybar/scripts/timer.sh down",  // previously up
-        "on-scroll-down": "~/.config/waybar/scripts/timer.sh up",  // previously down
-        "tooltip": true,
-        "escape": true
     }
 }

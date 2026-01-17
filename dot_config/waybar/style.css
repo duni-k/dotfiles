@@ -2,55 +2,49 @@
 
 * {
     font-family: "JetBrainsMono Nerd Font";
-    font-size: 12px;
+    font-size: 14px;
     font-weight: bold;
     min-height: 0;
+    border-radius: 2px 0 0 2px;
 }
 
 window#waybar {
     background: @background;
+    color: @foreground;
 }
 
-#custom-launcher {
-    color: @foreground;
-    margin: 10px 0;
-    padding: 10px;
+#window {
+    margin-top: 10px;
+    padding: 0 8px;
+}
+
+#window > * {
+    margin: 0 2px;
 }
 
 #workspaces button {
-  all: initial;
+  all: unset;
+  border-radius: 15px;
   padding: 0 6px;
   margin: 0 1.5px;
   min-width: 9px;
-}
-
-#workspaces button.active {
-  all: initial;
-  padding: 0 6px;
-  margin: 0 1.5px;
-  min-width: 9px;
-  background: alpha(@foreground, 0.2)
 }
 
 #workspaces button.empty {
   opacity: 0.5;
 }
 
-#clock {
-    color: @foreground;
-    font-size: 14px;
-    font-weight: bold;
+#system {
+  background: @foreground;
+  color: @background;
 }
 
-#tray,
-#pulseaudio,
-#network,
-#cpu,
-#memory,
-#battery,
-#custom-power {
-    color: @foreground;
-    margin: 5px 0;
+#clock {
+    background: @foreground;
+    color: @background;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
 }
 
 #battery.warning,
@@ -58,17 +52,31 @@ window#waybar {
     color: alpha(@foreground, 0.7);
 }
 
-#custom-power {
-    margin-bottom: 10px;
-}
-
 tooltip {
-    background: @background;
     border: 2px solid alpha(@foreground, 0.2);
-    border-radius: 10px;
-    color: @foreground;
 }
 
-tooltip label {
-    color: @foreground;
+#custom-update,
+#workspaces button,
+#battery,
+#clock,
+#pulseaudio,
+#memory,
+#cpu,
+#network {
+  transition: box-shadow 0.3s ease;
+}
+
+#custom-update:hover,
+#workspaces button:hover,
+#battery:hover {
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+#clock:hover,
+#pulseaudio:hover,
+#memory:hover,
+#cpu:hover,
+#network:hover {
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.4);
 }
