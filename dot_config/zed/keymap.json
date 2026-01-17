@@ -792,7 +792,7 @@
       "ctrl-w ctrl-s": "pane::SplitHorizontal",
       "ctrl-w s": "pane::SplitHorizontal",
       "ctrl-w ctrl-c": "pane::CloseActiveItem",
-      "ctrl-w c": "pane::CloseActiveItem",
+      "ctrl-x": "pane::CloseActiveItem",
       "ctrl-w ctrl-q": "pane::CloseActiveItem",
       "ctrl-w q": "pane::CloseActiveItem",
       "ctrl-w ctrl-a": "pane::CloseAllItems",
@@ -1034,6 +1034,11 @@
       "ctrl+n": "debugger::StepOver",
       "ctrl+o": "debugger::StepOut",
       "ctrl+q": "debugger::Stop"
+    }
+  },
+  {
+    "bindings": {
+      "space g d": "git::BranchDiff"
     }
   }
 ]

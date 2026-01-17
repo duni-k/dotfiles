@@ -7,36 +7,36 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "auto_update": false,
   "autosave": "on_focus_change",
   "agent": {
     "default_profile": "write",
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-sonnet-4.5"
+      "model": "claude-sonnet-4.5",
     },
-    "model_parameters": []
+    "model_parameters": [],
   },
   "ui_font_family": ".SystemUIFont",
   "buffer_font_family": "CaskaydiaMono Nerd Font Mono",
   "icon_theme": "Zed (Default)",
   "telemetry": {
-    "diagnostics": true,
-    "metrics": false
+    "diagnostics": false,
+    "metrics": false,
   },
   "vim_mode": true,
-  "ui_font_size": 16,
-  "buffer_font_size": 15,
+  "ui_font_size": 12.0,
+  "buffer_font_size": 12.0,
   "theme": {
     "mode": "dark",
     "light": "Flexoki Light",
-    "dark": "Nord Dark"
+    "dark": "Catppuccin Mocha",
   },
   "languages": {
     "Python": {
-      "code_actions_on_format": {
-        "source.fixAll.ruff": true
-      },
-      "format_on_save": "on"
-    }
-  }
+      "language_servers": ["ty", "!basedpyright", "..."],
+      "format_on_save": "on",
+      "code_actions_on_format": { "source.fixAll.ruff": true },
+    },
+  },
 }
