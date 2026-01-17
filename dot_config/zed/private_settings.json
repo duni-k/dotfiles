@@ -17,6 +17,7 @@
     },
     "model_parameters": [],
   },
+  "file_scan_exclusions": ["**/.git", "**/__pycache__"],
   "ui_font_family": ".SystemUIFont",
   "buffer_font_family": "CaskaydiaMono Nerd Font Mono",
   "icon_theme": "Zed (Default)",
