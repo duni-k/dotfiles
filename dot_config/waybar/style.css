@@ -1,0 +1,93 @@
+@import "../omarchy/current/theme/waybar.css";
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 14px;
+    font-weight: bold;
+    min-height: 0;
+    border-radius: 2px 0 0 2px;
+}
+
+window#waybar {
+    background: transparent;
+    color: @foreground;
+}
+
+#system,
+#language,
+#window,
+#clock
+{
+    background: @foreground;
+    color: @background;
+}
+
+#system {
+    padding-top: 4px;
+    border-radius: 2px 0 0 0;
+}
+#language {
+    border-radius: 0;
+}
+
+#window {
+    border-radius: 0 0 0 2px;
+    padding: 0 8px 8px;
+}
+
+#window > * {
+    margin-left: 2px;
+}
+
+#workspaces button {
+    all: unset;
+    border-radius: 15px;
+    padding: 0 6px;
+    margin: 0 1.5px;
+    min-width: 9px;
+}
+
+#workspaces button.empty {
+    opacity: 0.5;
+}
+
+#clock {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#battery.warning,
+#battery.critical {
+    color: alpha(@foreground, 0.7);
+}
+
+
+tooltip {
+    border: 2px solid alpha(@foreground, 0.2);
+}
+
+#custom-update,
+#workspaces button,
+#battery,
+#clock,
+#pulseaudio,
+#memory,
+#cpu,
+#network {
+  transition: box-shadow 0.3s ease;
+}
+
+#custom-update:hover,
+#workspaces button:hover,
+#battery:hover {
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+#clock:hover,
+#pulseaudio:hover,
+#memory:hover,
+#cpu:hover,
+#network:hover {
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.4);
+}
