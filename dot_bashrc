@@ -11,7 +11,7 @@ source ~/.local/share/omarchy/default/bash/rc
 # alias p='python'
 alias e=nvim
 alias lzd=lazydocker
-alias lg=layzgit
+alias lg=lazygit
 
 function files() {
   e $(tv files)
