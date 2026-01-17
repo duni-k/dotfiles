@@ -1,37 +1,47 @@
 {
+    "reload_on_style_change": true,
     "layer": "top",
     "position": "right",
-    "font_size": 8,
-    "width": 60,
+    "width": 20,
     "spacing": 8,
     "margin-top": 10,
     "margin-bottom": 10,
     "margin-left": 10,
     
     "modules-left": [
-        "custom/launcher",
+        "custom/omarchy",
+        "custom/update",
         "hyprland/workspaces"
     ],
     
     "modules-center": [
-        "clock",
-        "custom/timer",
+        "clock"
     ],
     
     "modules-right": [
-        "tray",
         "pulseaudio",
         "network",
         "cpu",
         "memory",
         "battery",
-        "custom/power"
+        "tray",
+        "custom/timer",
     ],
 
-    "custom/launcher": {
-        "format": "󰣇",
-        "on-click": "wofi --show drun",
-        "tooltip": false
+    "custom/omarchy": {
+      "format": "\r<span font='omarchy'>\ue900</span>",
+      "on-click": "omarchy-menu",
+      "on-click-right": "xdg-terminal-exec",
+      "tooltip-format": "Omarchy Menu\n\nSuper + Alt + Space"
+    },
+
+    "custom/update": {
+      "format": "",
+      "exec": "omarchy-update-available",
+      "on-click": "omarchy-launch-floating-terminal-with-presentation omarchy-update",
+      "tooltip-format": "Omarchy update available",
+      "signal": 7,
+      "interval": 21600
     },
 
     "hyprland/workspaces": {
@@ -57,6 +67,7 @@
     "clock": {
         "format": "{:%H\n%M}",
         "format-alt": "{:%m\n%d}",
+        "on-click": "omarchy-launch-or-focus-webapp 'calendar' 'https://calendar.google.com'",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
             "mode": "month",
@@ -79,21 +90,30 @@
         "format-icons": {
             "default": ["󰕿", "󰖀", "󰕾"]
         },
-        "on-click": "pavucontrol",
+        "on-click": "omarchy-launch-audio",
+        "on-click-right": "pamixer -t",
         "tooltip-format": "{volume}%"
     },
 
     "network": {
-        "format-wifi": "󰤨",
-        "format-ethernet": "󰈀",
-        "format-disconnected": "󰤭",
-        "tooltip-format": "{essid} ({signalStrength}%)",
-        "on-click": "nm-connection-editor"
+      "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+      "format": "{icon}",
+      "format-wifi": "{icon}",
+      "format-ethernet": "󰀂",
+      "format-disconnected": "󰤮",
+      "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+      "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+      "tooltip-format-disconnected": "Disconnected",
+      "interval": 3,
+      "spacing": 1,
+      "on-click": "omarchy-launch-wifi"
     },
 
     "cpu": {
         "format": "󰻠",
-        "tooltip-format": "CPU: {usage}%"
+        "tooltip-format": "CPU: {usage}%",
+        "on-click": "omarchy-launch-or-focus-tui btop",
+        "on-click-right": "alacritty"
     },
 
     "memory": {
@@ -113,11 +133,6 @@
         "tooltip-format": "{capacity}%"
     },
 
-    "custom/power": {
-        "format": "⏻",
-        "on-click": "wlogout",
-        "tooltip": false
-    },
     "custom/timer": {
         "exec": "~/.config/waybar/scripts/timer.sh",
         "return-type": "json",

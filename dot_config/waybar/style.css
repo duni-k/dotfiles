@@ -1,57 +1,45 @@
 @import "../omarchy/current/theme/waybar.css";
 
-@define-color foreground #d8dee9;
-@define-color background #2e3440;
-
 * {
     font-family: "JetBrainsMono Nerd Font";
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
     min-height: 0;
 }
 
 window#waybar {
     background: @background;
-    border-radius: 15px;
-    border: 2px solid alpha(@foreground, 0.2);
 }
 
 #custom-launcher {
     color: @foreground;
-    font-size: 24px;
     margin: 10px 0;
     padding: 10px;
 }
 
-#workspaces {
-    margin: 5px 0;
-}
-
 #workspaces button {
-    color: alpha(@foreground, 0.5);
-    border-radius: 10px;
-    margin: 5px 0;
-    padding: 8px 0;
-    min-width: 40px;
-    transition: all 0.3s ease;
+  all: initial;
+  padding: 0 6px;
+  margin: 0 1.5px;
+  min-width: 9px;
 }
 
 #workspaces button.active {
-    color: @foreground;
-    background: alpha(@foreground, 0.15);
+  all: initial;
+  padding: 0 6px;
+  margin: 0 1.5px;
+  min-width: 9px;
+  background: alpha(@foreground, 0.2)
 }
 
-#workspaces button:hover {
-    background: alpha(@foreground, 0.1);
-    color: @foreground;
+#workspaces button.empty {
+  opacity: 0.5;
 }
 
 #clock {
     color: @foreground;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
-    padding: 10px 0;
-    margin: 10px 0;
 }
 
 #tray,
@@ -62,9 +50,7 @@ window#waybar {
 #battery,
 #custom-power {
     color: @foreground;
-    padding: 10px 0;
     margin: 5px 0;
-    font-size: 18px;
 }
 
 #battery.warning,
@@ -73,7 +59,6 @@ window#waybar {
 }
 
 #custom-power {
-    font-size: 20px;
     margin-bottom: 10px;
 }
 
@@ -86,5 +71,4 @@ tooltip {
 
 tooltip label {
     color: @foreground;
-    padding: 5px;
 }
