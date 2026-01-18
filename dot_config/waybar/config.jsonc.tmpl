@@ -23,7 +23,9 @@
     
     "modules-right": [
         "tray",
+        {{ if eq .machine "laptop" }}
         "battery",
+        {{ end }}
         "clock"
     ],
     
