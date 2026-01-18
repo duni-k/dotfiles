@@ -10,6 +10,7 @@ source ~/.local/share/omarchy/default/bash/rc
 # Make an alias for invoking commands you use constantly
 # alias p='python'
 alias e=$EDITOR
+alias hx=helix
 alias lzd=lazydocker
 alias lg=lazygit
 
@@ -30,4 +31,5 @@ function grs() {
 }
 
 . "$HOME/.cargo/env"
-eval "$(tv init bash)"
+
+. "$HOME/.local/share/../bin/env"
