@@ -48,8 +48,13 @@
     "hyprland/workspaces": {
         "format": "{icon}",
         "format-icons": {
+        {{ if .monitor.internal }}
+            "active": "■",
+            "inactive": "□"
+        {{ else }}
             "active": "●",
             "default": "○"
+        {{ end }}
         },
         "persistent-workspaces": {
             "*": 5
