@@ -1,1 +1,5 @@
 theme = "everforest_dark"
+
+[editor.cursor-shape]
+insert = "bar"
+select = "underline"
