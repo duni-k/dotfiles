@@ -1,0 +1,9 @@
+# Changes require a restart to take effect.
+
+# Install other terminals via Install > Terminal
+export TERMINAL=xdg-terminal-exec
+
+export EDITOR=helix
+
+export OMARCHY_SCREENSHOT_DIR="/media/images/screenshots"
+export OMARCHY_SCREENRECORD_DIR="/media/movies/recordings"

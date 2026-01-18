@@ -1,0 +1,192 @@
+@import "../omarchy/current/theme/waybar.css";
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    {{ if .monitor.internal }}
+    font-size: 18px;
+    {{ else }}
+    font-size: 13px;
+    {{ end }}
+    font-weight: bold;
+    min-height: 0;
+}
+
+window#waybar {
+    {{ if not .monitor.internal }}
+    background: transparent;
+    {{ end }}
+    color: @foreground;
+}
+
+{{ if eq .waybar.orientation "horizontal" }}
+/* Horizontal layout spacing */
+.modules-left {
+    margin-left: 0;
+}
+
+.modules-right {
+    margin-right: 0;
+}
+
+.modules-left > * {
+    margin-right: 8px;
+}
+
+.modules-right > * {
+    margin-left: 8px;
+}
+
+#workspaces {
+    margin: 0 12px;
+}
+{{ else }}
+/* Vertical layout spacing */
+.modules-left > *,
+.modules-right > * {
+    margin: 4px 0;
+}
+
+#workspaces {
+    margin: 8px 0;
+}
+{{ end }}
+
+#system,
+#language,
+#window,
+#clock {
+    background: @foreground;
+    color: @background;
+}
+
+#system {
+    {{ if eq .waybar.orientation "horizontal" }}
+    padding: 2px 8px;
+    border-radius: 0 0 0 2px;
+    {{ else }}
+    padding-top: 4px;
+    border-radius: 2px 0 0 0;
+    {{ end }}
+}
+
+#language {
+    {{ if eq .waybar.orientation "horizontal" }}
+    padding: 2px 8px;
+    border-radius: 0;
+    {{ else }}
+    border-radius: 0;
+    padding: 4px;
+    {{ end }}
+}
+
+#window {
+    {{ if eq .waybar.orientation "horizontal" }}
+    padding: 2px 12px;
+    border-radius: 0 0 2px 0;
+    {{ else }}
+    border-radius: 0 0 0 2px;
+    padding: 0 8px 8px;
+    {{ end }}
+}
+
+#window > * {
+    margin-left: 2px;
+}
+
+#custom-update {
+    {{ if eq .waybar.orientation "horizontal" }}
+    padding: 4px 8px;
+    {{ else }}
+    padding: 4px;
+    {{ end }}
+}
+
+#workspaces button {
+    {{ if eq .waybar.orientation "vertical" }}
+    all: unset;
+    {{ end }}
+    border-radius: 15px;
+    {{ if eq .waybar.orientation "horizontal" }}
+    padding: 2px 8px;
+    margin: 0 2px;
+    {{ else }}
+    padding: 0 6px;
+    margin: 0 1.5px;
+    {{ end }}
+    min-width: 9px;
+}
+
+#workspaces button.empty {
+    opacity: 0.5;
+}
+
+#clock {
+    font-size: 13px;
+    font-weight: bold;
+    {{ if eq .waybar.orientation "horizontal" }}
+    padding: 2px 8px;
+    border-radius: 0 0 2px 0;
+    {{ else }}
+    margin-top: 10px;
+    padding: 4px;
+    {{ end }}
+}
+
+#tray {
+    {{ if eq .waybar.orientation "horizontal" }}
+    padding: 0 4px;
+    {{ end }}
+}
+
+#battery {
+    {{ if eq .waybar.orientation "horizontal" }}
+    padding: 2px 8px;
+    {{ else }}
+    padding: 4px;
+    {{ end }}
+}
+
+#pulseaudio,
+#network,
+#cpu,
+#memory {
+    {{ if eq .waybar.orientation "horizontal" }}
+    padding: 2px 6px;
+    {{ else }}
+    padding: 4px;
+    {{ end }}
+}
+
+#battery.warning,
+#battery.critical {
+    color: alpha(@foreground, 0.7);
+}
+
+tooltip {
+    border: 2px solid alpha(@foreground, 0.2);
+}
+
+#custom-update,
+#workspaces button,
+#battery,
+#clock,
+#pulseaudio,
+#memory,
+#cpu,
+#network {
+    transition: box-shadow 0.3s ease;
+}
+
+#custom-update:hover,
+#workspaces button:hover,
+#battery:hover {
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+#clock:hover,
+#pulseaudio:hover,
+#memory:hover,
+#cpu:hover,
+#network:hover {
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.4);
+}
