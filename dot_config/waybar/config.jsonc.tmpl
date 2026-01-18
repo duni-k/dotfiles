@@ -13,8 +13,7 @@
     "modules-left": [
         "custom/update",
         "group/system",
-        "hyprland/language",
-        "hyprland/window"
+        "hyprland/language"
     ],
     
     "modules-center": [
@@ -50,28 +49,18 @@
     "hyprland/workspaces": {
         "format": "{icon}",
         "format-icons": {
-        {{ if .monitor.internal }}
-            "active": "■",
-            "default": "□"
-        {{ else }}
-            "active": "●",
-            "default": "○"
-        {{ end }}
+            "active": "",
+            "default": "",
+            "empty": ""
         },
         "persistent-workspaces": {
-            "*": 5
-        },
-        "on-click": "activate"
+            "*": [ 1,2,3,4,5 ]
+        }
     },
     "hyprland/language": {
         "format": "{}",
         "format-en": "EN",
         "format-sv": "SV"
-    },
-    "hyprland/window": {
-        "format": "",
-        "icon": true,
-        "icon-size": 20
     },
     "clock": {
         {{ if eq .waybar.orientation "horizontal" }}

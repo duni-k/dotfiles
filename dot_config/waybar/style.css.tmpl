@@ -40,7 +40,6 @@ window#waybar {
     margin: 0 12px;
 }
 {{ else }}
-/* Vertical layout spacing */
 .modules-left > *,
 .modules-right > * {
     margin: 4px 0;
@@ -51,6 +50,25 @@ window#waybar {
 }
 {{ end }}
 
+#workspaces button {
+    all:unset;
+    color: rgba(255, 255, 255, 0.2);
+    transition: all .2s ease;
+}
+#workspaces button.active {
+    color: #A7C080;
+    border: none;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
+}
+#workspaces button.empty {
+    color: rgba(0,0,0,0);
+    border: none;
+    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .2);
+}
+#workspaces button.empty.active {
+    border: none;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
+}
 #system,
 #language,
 #window,
@@ -61,7 +79,7 @@ window#waybar {
 
 #system {
     {{ if eq .waybar.orientation "horizontal" }}
-    padding: 2px 8px;
+    padding: 2px 2px;
     {{ else }}
     padding-top: 4px;
     border-radius: 2px 0 0 0;
@@ -70,7 +88,7 @@ window#waybar {
 
 #language {
     {{ if eq .waybar.orientation "horizontal" }}
-    padding: 2px 8px;
+    padding-right: 8px;
     {{ else }}
     border-radius: 0;
     padding: 4px;
