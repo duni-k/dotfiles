@@ -1,0 +1,86 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "window_decorations": "server",
+  "use_system_window_tabs": false,
+  "tab_bar": {
+    "show_nav_history_buttons": false,
+    "show_tab_bar_buttons": false,
+    "show": true,
+  },
+  "project_panel": {
+    "entry_spacing": "standard",
+    "dock": "left",
+    "sort_mode": "mixed",
+  },
+  "vim_mode": true,
+  "auto_update": false,
+  "autosave": "on_focus_change",
+  "file_scan_exclusions": ["**/.git", "**/__pycache__"],
+  "ui_font_family": ".SystemUIFont",
+  "buffer_font_family": ".ZedMono",
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Zed (Default)",
+    "dark": "Zed (Default)",
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+  "ui_font_size": 18.0,
+  "buffer_font_size": 12.0,
+  "toolbar": {
+    "breadcrumbs": true, // Whether to show breadcrumbs.
+    "quick_actions": false, // Whether to show quick action buttons.
+    "selections_menu": false, // Whether to show the Selections menu
+    "agent_review": false, // Whether to show agent review buttons
+    "code_actions": false, // Whether to show code action buttons
+  },
+  "theme": {
+    "mode": "light",
+    "light": "Noctalia Light",
+    "dark": "Everforest Dark Hard (regular)",
+  },
+  "languages": {
+    "PHP": {
+      "format_on_save": "off",
+    },
+    "Python": {
+      "language_servers": [
+        "ty",
+        "!basedpyright",
+        "!pyright",
+        "!zuban",
+        "!pyflakes",
+        "...",
+      ],
+      "format_on_save": "on",
+      "code_actions_on_format": { "source.fixAll.ruff": true },
+    },
+    "YAML": {
+      "format_on_save": "off",
+    },
+    "SQL": {
+      "formatter": {
+        "external": {
+          "command": "sql-formatter",
+          "arguments": ["--language", "mysql"],
+        },
+      },
+    },
+    "Dockerfile": {
+      "format_on_save": "off",
+    },
+    "XML": {
+      "format_on_save": "off",
+    },
+    "TypeScript": { "format_on_save": "off" },
+  },
+}

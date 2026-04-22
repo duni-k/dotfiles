@@ -1,0 +1,10 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR DAGSTER_HOME:\x2edagster_home
+SETUVAR --export EDITOR:nvim
+SETUVAR --export PAGER:bat
+SETUVAR --export PYENV_ROOT:/home/eall/\x2epyenv
+SETUVAR --export SSH_AUTH_SOCK:/run/user/1000/ssh\x2dagent\x2esocket
+SETUVAR __fish_initialized:4300
+SETUVAR --export fish_greeting:\x1d
+SETUVAR fish_user_paths:/home/eall/\x2epyenv/bin
