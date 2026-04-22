@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+sleep 2
+dbeaver &
+sleep 1
+/opt/zen-browser-bin/zen-bin &
+sleep 0.1
+zeditor &
+ghostty &
+sleep 0.1
+slack &
