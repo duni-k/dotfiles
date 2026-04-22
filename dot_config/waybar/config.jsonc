@@ -1,0 +1,133 @@
+{
+    "reload_style_on_change": true,
+    "layer": "top",
+    "output": "eDP-1",
+    "position": "left",
+    "width": 48,
+    "spacing": 6,
+
+    "modules-left": ["group/system"],
+    "modules-center": ["niri/workspaces"],
+    "modules-right": ["power-profiles-daemon", "custom/idle-inhibitor", "keyboard-state", "custom/keyboard-layout", "tray", "clock"],
+
+    "group/system": {
+        "orientation": "inherit",
+        "modules": [
+            "network",
+            "bluetooth",
+            "cpu",
+            "memory",
+            "wireplumber",
+            "battery"
+        ]
+    },
+    "niri/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "dbeaver": "󰆼",
+            "browser": "󰖟",
+            "code": "󰘦",
+            "comms": "󰒱",
+            "special": "󰝚",
+            "default": "○"
+        },
+	"hide-empty": true
+    },
+    "clock": {
+	"format": "{:%H%n<span alpha='50%%'>%M</span>}",
+	"format-alt": "{:%d%n<span alpha='50%%'>%m</span>}",
+	"on-click": "xdg-open https://calendar.google.com",
+	"tooltip-format": "<tt><small>{calendar}</small></tt>",
+	"calendar": {
+	    "mode": "month",
+	    "format": {
+	        "months": "<span color='#7aa2f7'><b>{}</b></span>",
+	        "days": "<span color='#c0caf5'>{}</span>",
+	        "weekdays": "<span color='#565f89'><b>{}</b></span>",
+	        "today": "<span color='#7aa2f7'><b><u>{}</u></b></span>"
+	    }
+    }
+    },
+    "tray": {
+        "spacing": 10
+    },
+    "bluetooth": {
+        "format": "󰂯",
+        "format-connected": "󰂱",
+        "format-disabled": "󰂲",
+        "tooltip-format": "{controller_alias} ({num_connections} connected)",
+        "on-click": "foot --app-id=bluetui -e bluetui"
+    },
+    "wireplumber": {
+        "format": "{icon}",
+        "format-muted": "󰝟",
+        "format-icons": ["󰕿", "󰖀", "󰕾"],
+        "on-click": "pavucontrol",
+        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "tooltip-format": "{volume}% "
+    },
+    "network": {
+        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+        "format": "{icon}",
+        "format-wifi": "{icon}",
+        "format-ethernet": "󰀂",
+        "format-disconnected": "󰤮",
+        "tooltip-format-wifi": "{essid} ({frequency} GHz)",
+        "tooltip-format-ethernet": "Connected",
+        "tooltip-format-disconnected": "Disconnected",
+        "interval": 3,
+        "spacing": 1,
+        "on-click": "foot --app-id=impala -e impala"
+    },
+    "cpu": {
+        "format": "󰻠",
+        "tooltip-format": "CPU: {usage}%",
+        "on-click": "foot --title=btop -e btop",
+    },
+    "memory": {
+        "format": "󰍛",
+        "tooltip-format": "RAM: {percentage}%"
+    },
+    "custom/keyboard-layout": {
+        "exec": "~/.config/waybar/keyboard-layout.sh",
+        "interval": 1,
+        "format": "{}"
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "on-click": "tlpui",
+        "format": "{icon}",
+        "format-charging": "󰂄",
+        "format-plugged": "󰂄",
+        "format-icons": ["󰂃", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "tooltip-format": "{capacity}%"
+    },
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "format-icons": {
+            "default":      "󱐌",
+            "performance":  "󱐋",
+            "balanced":     "󱐌",
+            "power-saver":  "󱐍"
+        }
+    },
+    "custom/idle-inhibitor": {
+        "exec": "~/.config/waybar/scripts/idle-inhibitor.sh",
+        "on-click": "~/.config/waybar/scripts/idle-inhibitor.sh toggle",
+        "return-type": "json",
+        "interval": 5,
+        "signal": 9
+    },
+    "keyboard-state": {
+        "capslock": true,
+        "format": "{icon}",
+        "format-icons": {
+            "locked": "󰪛",
+            "unlocked": ""
+        }
+    }
+}

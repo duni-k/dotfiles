@@ -1,0 +1,7 @@
+promptToReturnFromSubprocess: false
+
+git:
+  pagers:
+    - pager: delta --light --paging=never
+      colorArg: never
+    - externalDiffCommand: difft --color=always --syntax-highlight on

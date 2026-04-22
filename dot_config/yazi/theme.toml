@@ -1,0 +1,78 @@
+[manager]
+cwd = { fg = "#7847bd" }
+
+hovered = { fg = "#d5d6db", bg = "#7847bd" }
+preview_hovered = { underline = true }
+
+find_keyword  = { fg = "#8f5e15", bold = true }
+find_position = { fg = "#7847bd", bg = "reset", bold = true }
+
+marker_copied  = { fg = "#385f0d", bg = "#385f0d" }
+marker_cut     = { fg = "#9d0006", bg = "#9d0006" }
+marker_marked  = { fg = "#7847bd", bg = "#7847bd" }
+marker_selected = { fg = "#2959aa", bg = "#2959aa" }
+
+tab_active   = { fg = "#d5d6db", bg = "#7847bd" }
+tab_inactive = { fg = "#6c6e75", bg = "#c4c8da" }
+
+border_symbol = "│"
+border_style  = { fg = "#9699a3" }
+
+[status]
+separator_open  = ""
+separator_close = ""
+separator_style = { fg = "#c4c8da", bg = "#c4c8da" }
+
+mode_normal = { fg = "#d5d6db", bg = "#7847bd", bold = true }
+mode_select = { fg = "#d5d6db", bg = "#385f0d", bold = true }
+mode_unset  = { fg = "#d5d6db", bg = "#8f5e15", bold = true }
+
+progress_label  = { fg = "#343b58", bold = true }
+progress_normal = { fg = "#7847bd", bg = "#c4c8da" }
+progress_error  = { fg = "#9d0006", bg = "#c4c8da" }
+
+permissions_t = { fg = "#7847bd" }
+permissions_r = { fg = "#8f5e15" }
+permissions_w = { fg = "#9d0006" }
+permissions_x = { fg = "#385f0d" }
+permissions_s = { fg = "#6c6e75" }
+
+[input]
+border   = { fg = "#7847bd" }
+title    = { fg = "#7847bd" }
+value    = { fg = "#343b58" }
+selected = { fg = "#d5d6db", bg = "#7847bd" }
+
+[completion]
+border   = { fg = "#7847bd" }
+active   = { fg = "#d5d6db", bg = "#7847bd" }
+inactive = { fg = "#6c6e75" }
+
+[tasks]
+border  = { fg = "#7847bd" }
+title   = { fg = "#7847bd" }
+hovered = { underline = true }
+
+[which]
+mask            = { bg = "#c4c8da" }
+cand            = { fg = "#7847bd" }
+rest            = { fg = "#6c6e75" }
+desc            = { fg = "#343b58" }
+separator       = "  "
+separator_style = { fg = "#9699a3" }
+
+[help]
+on      = { fg = "#7847bd" }
+run     = { fg = "#2959aa" }
+desc    = { fg = "#343b58" }
+hovered = { bg = "#c4c8da", bold = true }
+footer  = { fg = "#d5d6db", bg = "#7847bd" }
+
+[notify]
+title_info  = { fg = "#7847bd" }
+title_warn  = { fg = "#8f5e15" }
+title_error = { fg = "#9d0006" }
+
+[flavor]
+dark  = "noctalia"
+light = "noctalia"

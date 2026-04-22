@@ -1,0 +1,10 @@
+default-timeout=10
+background-color=#d5d6db
+text-color=#343b58
+border-color=#9699a3
+progress-color=over #7847bd
+
+[urgency=high]
+border-color=#f52a65
+text-color=#f52a65
+ignore-timeout=1  
