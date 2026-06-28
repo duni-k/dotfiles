@@ -1,1 +1,9 @@
 .config/niri/animations
+
+# Noctalia-generated theme outputs (regenerated from the active colorscheme on login)
+.config/niri/noctalia.kdl
+.config/ghostty/themes/noctalia
+.config/zed/themes/noctalia.json
+.config/yazi/flavors/noctalia.yazi
+.config/btop/themes/noctalia.theme
+.config/nvim/lua/matugen.lua
